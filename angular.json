@@ -28,12 +28,14 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "/"
               }
             ],
             "styles": [
-               "src/styles.scss",
-              "src/tailwind.scss"
+              "src/tailwind.scss",
+               "src/styles.scss"
+              
             ],
             "scripts": []
           },
