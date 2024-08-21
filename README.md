@@ -1,9 +1,5 @@
 # English
 
-Here is an English version of the README file for your application:
-
----
-
 # Car Lease Portal
 
 **Car Lease Portal** is an Angular application designed to showcase and manage car leasing options. The application is built using modern web technologies such as Angular, SASS, Tailwind CSS, ESLint, and Prettier. This README file provides instructions on how to install, configure, and run the application.
@@ -120,10 +116,6 @@ If you want to contribute to the project, follow these steps:
 ## **License**
 
 This project is licensed under the MIT License. See the LICENSE file for more information.
-
----
-
-This README file provides developers and contributors with clear instructions on how to get started with the project, including the tools and technologies used. It covers installation, setup, and the use of tools like ESLint and Prettier, as well as version control with GitHub.
 
 # Dansk
 
