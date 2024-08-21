@@ -14,13 +14,33 @@ import { RouterModule } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   offers: Offer[] = [];
+  apiError: boolean = false;
 
   constructor(private offerService: OfferService) {}
 
   ngOnInit(): void {
-    this.offerService.getOffers().subscribe((data) => {
-      this.offers = data.results;
-      console.log(this.offers);
-    });
+    this.offerService.getOffers().subscribe(
+      (data) => {
+        this.offers = data.results;
+        console.log(this.offers);
+      },
+      (error) => {
+        console.error('API Error:', error);
+        this.apiError = true;
+        
+        // Generer en liste med 10 eksempler på tilbud
+        this.offers = Array(10).fill(this.exampleOffer);
+      }
+    );
   }
+
+  exampleOffer: Offer = {
+    id: 'example-id',
+    full_title: 'Example Car',
+    thumbnail: 'https://via.placeholder.com/150',
+    price_monthly: 2995,
+    address: {
+      city: 'Example City',
+    },
+  };
 }
