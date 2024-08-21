@@ -2,12 +2,12 @@
     <div class="container mx-auto px-4">
       <h1 class="text-3xl font-bold mb-6">Available Offers</h1>
   
-      <!-- Vis en fejlmeddelelse, hvis API'et ikke kunne tilgås -->
+      <!-- Display an error message if the API could not be accessed -->
       <div *ngIf="apiError" class="text-center text-red-600 mb-4">
         <p>Failed to load offers from API. Showing example data.</p>
       </div>
   
-      <!-- Kortene vises her -->
+      <!-- Cards displaying the offers are shown here -->
       <div *ngIf="offers.length > 0" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <div *ngFor="let offer of offers" class="bg-white shadow-lg rounded-lg overflow-hidden">
           <img class="w-full h-48 object-cover" [src]="offer.thumbnail" alt="{{ offer.full_title }}">
@@ -15,12 +15,13 @@
             <h2 class="text-xl font-semibold">{{ offer.full_title }}</h2>
             <p class="text-gray-600">Price: {{ offer.price_monthly }} USD/month</p>
             <p class="text-gray-600">Location: {{ offer.address.city }}</p>
+            <!-- Link to the details page for each offer -->
             <a [routerLink]="['/car-detail', offer.id]" class="block mt-4 text-center text-blue-500 hover:text-blue-700">View Details</a>
           </div>
         </div>
       </div>
   
-      <!-- Hvis der ingen tilbud er -->
+      <!-- Message shown if no offers are available -->
       <div *ngIf="offers.length === 0">
         <p class="text-center">No offers available at the moment.</p>
       </div>

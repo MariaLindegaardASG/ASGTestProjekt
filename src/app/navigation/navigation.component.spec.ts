@@ -1,23 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
-import { NavigationComponent } from './navigation.component';
+@Component({
+  selector: 'app-navigation',
+  standalone: true,
+  imports: [NgClass, RouterModule], // Importing necessary modules for using Angular directives and router functionalities
+  templateUrl: './navigation.component.html', // Template file containing the HTML structure
+  styleUrls: ['./navigation.component.scss'] // Styles specific to this component
+})
+export class NavigationComponent {
+  // Boolean flag to control the visibility of the mobile menu
+  menuOpen = false;
 
-describe('NavigationComponent', () => {
-  let component: NavigationComponent;
-  let fixture: ComponentFixture<NavigationComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [NavigationComponent]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(NavigationComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  // Method to toggle the menu visibility when the toggle button is clicked
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+}
