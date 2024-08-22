@@ -7,7 +7,7 @@ import { Offer } from '../models/offer.model';
   providedIn: 'root', // Makes the service available application-wide
 })
 export class OfferService {
-  private apiUrl = 'https://your-api-url.com/api/offers/?apikey=57cbc4167ddceb00519e67907d69331c96b1dead'; // API endpoint
+  private apiUrl = 'https://www.findleasing.nu/api/offers/?apikey=57cbc4167ddceb00519e67907d69331c96b1dead'; // API endpoint
 
   constructor(private http: HttpClient) {}
 

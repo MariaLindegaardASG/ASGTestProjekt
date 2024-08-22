@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
   exampleOffer: Offer = {
     id: 'example-id', // Example ID for mock offer
     full_title: 'Example Car', // Example title for mock offer
-    thumbnail: 'https://via.placeholder.com/150', // Placeholder image for mock offer
+    thumbnail: 'img/bilTilCard.webp', // Placeholder image for mock offer
     price_monthly: 2995, // Example price for mock offer
     address: {
       city: 'Example City', // Example city for mock offer
